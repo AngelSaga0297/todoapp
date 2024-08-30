@@ -8,7 +8,7 @@ import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
 
-  loginForm!:FormGroup;
+  loginForm!: FormGroup;
 
   constructor(private replaceSpace: ReplaceSpacePipe) {
 
