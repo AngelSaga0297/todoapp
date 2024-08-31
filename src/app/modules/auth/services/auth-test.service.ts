@@ -1,13 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
 import { delay, map, of, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthTestService {
 
-  constructor() { }
+  private URL = environment.api;
+
+  constructor(private httpClient:HttpClient) { }
+
+  submitLogin(credentials:{email:string, password:string}):Observable<any>{
+    return this.httpClient.post(`${this.URL}/auth/login`, credentials)
+  }
 
   uniqueEmailValidator(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors | null> => {

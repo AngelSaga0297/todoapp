@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { TestCourseService } from '@shared//services/test-course.service';
 
 @Component({
   selector: 'app-header', //El tag que usas para llamar a este componente
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements OnInit {
   
   @ViewChild('title') elementRefId:ElementRef = new ElementRef('hola')
 
@@ -39,18 +40,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     }
   ]
 
-  constructor(private render2:Renderer2) { }
+  constructor(public testCourseService:TestCourseService) { }
 
   ngOnInit(): void {
     
   }
 
-  ngAfterViewInit(): void {
-    // const elementTitle = this.elementRefId.nativeElement;
-    
-    // setInterval(() => {
-    //   this.render2.setStyle(elementTitle, 'color', this.colors[this.colorIndex]);
-    //   this.colorIndex = (this.colorIndex + 1) % this.colors.length;
-    // }, 100); // Cambia el color cada 1000 ms (1 segundo)
-  }
 }

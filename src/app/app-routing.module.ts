@@ -11,6 +11,10 @@ const routes: Routes = [
     path:'task', // PRIVATE!! //TODO: http://localhost:4200/task
     loadChildren: () => import('./modules/task/task.module').then((m) => m.TaskModule),
     canActivate:[ValidateSessionGuard]
+  },
+  {
+    path:'**', //ruta que no existe entonce redirecciona a
+    redirectTo: '/task'
   }
 ];
 
