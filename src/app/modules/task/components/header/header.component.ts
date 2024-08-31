@@ -42,14 +42,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   constructor(private render2:Renderer2) { }
 
   ngOnInit(): void {
+    
   }
 
   ngAfterViewInit(): void {
-    const elementTitle = this.elementRefId.nativeElement;
+    // const elementTitle = this.elementRefId.nativeElement;
     
-    setInterval(() => {
-      this.render2.setStyle(elementTitle, 'color', this.colors[this.colorIndex]);
-      this.colorIndex = (this.colorIndex + 1) % this.colors.length;
-    }, 100); // Cambia el color cada 1000 ms (1 segundo)
+    // setInterval(() => {
+    //   this.render2.setStyle(elementTitle, 'color', this.colors[this.colorIndex]);
+    //   this.colorIndex = (this.colorIndex + 1) % this.colors.length;
+    // }, 100); // Cambia el color cada 1000 ms (1 segundo)
   }
 }

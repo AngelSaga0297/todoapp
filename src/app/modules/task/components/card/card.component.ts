@@ -6,7 +6,8 @@ import { interval } from 'rxjs';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class CardComponent implements OnInit, AfterViewInit, 
+  AfterViewChecked, DoCheck, OnChanges {
 
   @ViewChild('refId') elementRefId:ElementRef = new ElementRef('hola')
   @Input() idOrder: string | number = 0
@@ -26,13 +27,19 @@ export class CardComponent implements OnInit, AfterViewInit, AfterViewChecked {
     })
   } 
 
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log(changes)
+  }
+
+  ngDoCheck(): void {
+      // console.log('Hola soy el DoCheck')
+  }
+
   ngAfterViewInit(): void {
-    const elementTitle = this.elementRefId.nativeElement;
-      this.render2.setStyle(elementTitle, 'color', 'red')
+
   }
 
   ngAfterViewChecked(): void {
-      console.log('hola muindoooo')
   }
 
 }
