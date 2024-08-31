@@ -7,15 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskPageComponent implements OnInit {
 
-  showText = true;
+  case:number = 5800;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  changeText(): void {
-    this.showText = !this.showText;
   }
 
 }
