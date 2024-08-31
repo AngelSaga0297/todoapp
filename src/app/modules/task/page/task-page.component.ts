@@ -11,6 +11,13 @@ export class TaskPageComponent implements OnInit {
 
   constructor() { }
 
+  results:Array<string> = [
+  ]
+  resultsFiltered:Array<string> = [
+    'Holaaa'
+  ]  
+  resultsUpdated:Array<string> = [
+  ]
   ngOnInit(): void {
   }
 
