@@ -53,12 +53,20 @@
     font-weight: 600;
 }
 
+.navbar .logo:hover {
+    cursor: pointer;
+}
+
 .user-section {
     gap: 1.5rem;
 }
 
 .user-section .notifications .uil {
     font-size: 28px;
+}
+
+.user-section .notifications:hover{
+    cursor: pointer;
 }
 
 .user-section .notifications .count {
