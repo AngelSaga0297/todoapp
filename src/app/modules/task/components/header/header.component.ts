@@ -7,6 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  menu: Array<{name:string, router:any}> = [
+    {
+      name: 'Link',
+      router: []
+    },
+    {
+      name: 'Requests',
+      router: []
+    },
+    {
+      name: 'Shipments',
+      router: []
+    },
+    {
+      name: 'Invoices',
+      router: []
+    },
+    {
+      name: 'Employees',
+      router: []
+    },
+    {
+      name: 'Settings',
+      router: []
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
