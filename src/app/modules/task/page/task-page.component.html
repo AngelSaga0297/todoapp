@@ -1,5 +1,7 @@
 <app-header></app-header>
 
+<app-column [data]="listUser"></app-column>
+
 <ul>
     <li *ngFor="let user of listUser">
         <ng-container *ngTemplateOutlet="tplHello; context:{currentUser:user}">
