@@ -1,29 +1,12 @@
 <app-header></app-header>
 
-<div>
-    <ul *ngIf="results.length > 0 else tplNotFound">
-        <li *ngFor="let item of results">
-            {{item}}
-        </li>
-    </ul>
-</div>
+<ul>
+    <li *ngFor="let user of listUser">
+        <ng-container *ngTemplateOutlet="tplHello; context:{currentUser:user}">
+        </ng-container>
+    </li>
+</ul>
 
-<div>
-    <ul *ngIf="resultsFiltered.length > 0 else tplNotFound">
-        <li *ngFor="let item of resultsFiltered">
-            {{item}}
-        </li>
-    </ul>
-</div>
-
-<div>
-    <ul *ngIf="resultsUpdated.length > 0 else tplNotFound">
-        <li *ngFor="let item of resultsUpdated">
-            {{item}}
-        </li>
-    </ul>
-</div>
-
-<ng-template #tplNotFound>
-    <p>No hay resultados 🤔</p>
+<ng-template #tplHello let-myUser="currentUser">
+    Hola buenos dias {{myUser?.name}} 😎
 </ng-template>
