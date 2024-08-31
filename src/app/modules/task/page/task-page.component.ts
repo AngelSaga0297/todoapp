@@ -11,13 +11,21 @@ export class TaskPageComponent implements OnInit {
 
   constructor() { }
 
-  results:Array<string> = [
+  listUser:Array<{id:string, name:string}> = [
+    {
+      id: '1',
+      name:"Juan"
+    },
+    {
+      id: '2',
+      name:"Mario"
+    },    
+    {
+      id: '3',
+      name:"Sergio"
+    },
   ]
-  resultsFiltered:Array<string> = [
-    'Holaaa'
-  ]  
-  resultsUpdated:Array<string> = [
-  ]
+
   ngOnInit(): void {
   }
 
