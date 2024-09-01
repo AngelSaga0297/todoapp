@@ -7,13 +7,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { ColumnComponent } from './components/column/column.component';
 import { CardComponent } from './components/card/card.component';
 import { SharedModule } from '@shared//shared.module';
+import { NewTaskComponent } from './components/new-task/new-task.component';
 
 @NgModule({
   declarations: [
     TaskPageComponent,
     HeaderComponent,
     ColumnComponent,
-    CardComponent
+    CardComponent,
+    NewTaskComponent,
   ],
   imports: [
     CommonModule,

@@ -12,6 +12,7 @@ export class TaskPageComponent implements OnInit, OnDestroy {
   case:number = 5800;
 
   groups:Array<any> = [];
+  groups$ = this.taskService.getTask();
   listObservables$:Array<Subscription> = [];
 
   constructor(private taskService:TaskService) { }
@@ -33,12 +34,17 @@ export class TaskPageComponent implements OnInit, OnDestroy {
 
   //SOY EL INIT
   ngOnInit(): void {
-    this.taskService.getTask()
-    .subscribe((response) => {
-      console.log('---> ', response)
-    },(err) => {
-      console.log('Error', err)
-    })
+
+    // this.taskService.getTask()
+    // .subscribe((response) => {
+      
+    //   const {data} = response;
+    //   this.groups = data;
+
+    //   console.log('---> ', response)
+    // },(err) => {
+    //   console.log('Error', err)
+    // })
 
 
     // const observer1$ = interval(1000).subscribe((res) => {
@@ -46,55 +52,6 @@ export class TaskPageComponent implements OnInit, OnDestroy {
     // })
 
     // this.listObservables$ = [observer1$];
-
-    // this.groups = [
-    //   {
-    //     label: 'Nuevos',
-    //     color: 'tomato',
-    //     list: [
-    //       {
-    //         order: 'Como instalar Angular',
-    //         items: [
-    //           {
-    //             key: 'price',
-    //             value: 152
-    //           },
-    //           {
-    //             key: 'time',
-    //             value: 152
-    //           },
-    //           {
-    //             key: 'author',
-    //             value: {
-    //               name: 'Angel Sanchez',
-    //               avatar: 'https://avatars.githubusercontent.com/u/145235792?v=4'
-    //             }
-    //           },
-    //         ]
-    //       },
-    //       {
-    //         order: 'Instalar Node',
-    //         items: [
-    //           {
-    //             key: 'price',
-    //             value: 152
-    //           },
-    //           {
-    //             key: 'time',
-    //             value: 152
-    //           },
-    //           {
-    //             key: 'author',
-    //             value: {
-    //               name: 'Angel Sanchez',
-    //               avatar: 'https://avatars.githubusercontent.com/u/145235792?v=4'
-    //             }
-    //           },
-    //         ]
-    //       }
-    //     ]
-    //   }
-    // ]
 
   }
 

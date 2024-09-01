@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -15,6 +15,11 @@ export class TaskService {
   getTask():Observable<any>{
     return this.httpClient.get(
       `${this.URL}/task`
+    ).pipe(
+      catchError(() => {
+        console.log('Algo ocurrio fijate')
+        return of([])
+      })
     )
   }
 }
