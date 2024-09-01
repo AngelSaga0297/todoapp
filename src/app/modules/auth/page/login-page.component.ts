@@ -3,6 +3,7 @@ import { ReplaceSpacePipe } from '@shared//pipes/replace-space.pipe';
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthTestService } from '../services/auth-test.service';
 import { CookieService } from 'ngx-cookie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -14,7 +15,7 @@ export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
 
   constructor(private replaceSpace: ReplaceSpacePipe,
-     private authService:AuthTestService, private cookieService:CookieService) {
+     private authService:AuthTestService, private router:Router) {
 
    }
 
@@ -35,11 +36,7 @@ export class LoginPageComponent implements OnInit {
     const body = this. loginForm.value;
     this.authService.submitLogin(body)
     .subscribe((response) => {
-      const {tokenSession} = response;
-      
-      this.cookieService.put('token-session', tokenSession, {
-        path:'/'
-      })
+      this.router.navigate(['/','task'])
     })
     console.log(body)
   }

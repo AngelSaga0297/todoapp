@@ -10,7 +10,7 @@ import { TokenSessionInterceptor } from './core/interceptors/token-session.inter
 @NgModule({
   declarations: [
     AppComponent,
-
+    
   ],
   imports: [
     BrowserModule,

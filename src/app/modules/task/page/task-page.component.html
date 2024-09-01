@@ -1,8 +1,10 @@
 <app-header></app-header>
 <div class="task-columns">
-    
+ 
     <app-column [name]="group.label" [data]="group.list" 
-    *ngFor="let group of groups">
+    *ngFor="let group of (groups$ | async)?.data">
     </app-column>
     
 </div>
+
+<app-new-task></app-new-task>
